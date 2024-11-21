@@ -307,17 +307,17 @@ padding:40px 90px;
 
 .split{
   position:relative;
-  height:105vh;
   display:flex;
   background: #000;
+  height: 105vh;
 }
 
 section .screen{
   position:relative;
   flex-grow: 4;
+
   display: flex;
   overflow: hidden;
-  height:105vh;
   transition: 1s;
   justify-content:flex-end;
   align-items:flex-end;
