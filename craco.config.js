@@ -1,55 +1,39 @@
-// craco.config.js
 const path = require('path');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
-      // Configuration pour le JavaScript moderne
-      webpackConfig.output.filename = 'static/js/[name].[contenthash:8].modern.js';
-      
-      webpackConfig.module.rules.push({
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-env', {
-                targets: {
-                  esmodules: true
-                },
-                modules: false,
-                useBuiltIns: 'usage',
-                corejs: 3
-              }],
-              '@babel/preset-react'
-            ],
-            plugins: [
-              '@babel/plugin-transform-runtime'
-            ]
-          }
-        }
-      });
-
       // Optimisation des chunks
-      webpackConfig.optimization.splitChunks = {
-        chunks: 'all',
-        maxInitialRequests: Infinity,
-        minSize: 0,
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name(module) {
-              const packageName = module.context.match(
-                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-              )[1];
-              return `vendor.${packageName.replace('@', '')}`;
+      webpackConfig.optimization = {
+        ...webpackConfig.optimization,
+        splitChunks: {
+          chunks: 'all',
+          minSize: 20000,
+          maxSize: 50000,
+          minChunks: 1,
+          maxAsyncRequests: 30,
+          maxInitialRequests: 30,
+          cacheGroups: {
+            defaultVendors: {
+              test: /[\\/]node_modules[\\/]/,
+              priority: -10,
+              reuseExistingChunk: true,
+            },
+            default: {
+              minChunks: 2,
+              priority: -20,
+              reuseExistingChunk: true,
             },
           },
         },
       };
-
+      
       return webpackConfig;
-    }
-  }
+    },
+    plugins: [
+      // Analyseur de bundle (optionnel, pour le développement)
+      process.env.ANALYZE && new BundleAnalyzerPlugin(),
+    ].filter(Boolean),
+  },
 };
