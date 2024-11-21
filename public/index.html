@@ -4,20 +4,42 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     
-    <!-- Optimisation des polices -->
+    <!-- Préconnexions optimisées -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://db.onlinewebfonts.com" />
+    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
     
-    <!-- Chargement optimisé de la police Joyride -->
+    <!-- Préchargement des polices principales -->
+    <link 
+      rel="preload"
+      href="https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link 
+      rel="preload"
+      href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Hw5aXp-p7K4KLg.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Chargement optimisé des polices -->
     <link 
       href="https://db.onlinewebfonts.com/c/406b56da0c31245c249b3a3c61560d1a?family=Joyride+W05+STD"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
 
-    <!-- Meta tags importants -->
+    <!-- Meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -25,35 +47,65 @@
       content="Tesla Website - Découvrez notre gamme de véhicules électriques"
     />
     
+    <!-- Open Graph tags pour les réseaux sociaux -->
+    <meta property="og:title" content="Tesla - Véhicules Électriques" />
+    <meta property="og:description" content="Découvrez notre gamme de véhicules électriques" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%PUBLIC_URL%" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    
     <!-- Icônes -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Préchargement des ressources critiques -->
-    <link 
-      rel="preload" 
-      href="%PUBLIC_URL%/static/js/main.chunk.js" 
-      as="script"
-    />
-    
-    <!-- Titre de la page -->
-    <title>Tesla - Véhicules Électriques</title>
-
-    <!-- Style critique inline pour éviter le flash de contenu non stylé -->
+    <!-- Styles critiques inline -->
     <style>
+      /* Styles de base et polices de repli */
+      :root {
+        --font-primary: 'Joyride W05 STD', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      
       body {
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-          sans-serif;
+        font-family: var(--font-secondary);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
+
       #root {
         height: 100%;
       }
+
+      /* Classe pour la gestion du chargement des polices */
+      .fonts-loading {
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      .fonts-loaded {
+        font-family: var(--font-primary);
+      }
     </style>
+
+    <!-- Script de détection du chargement des polices -->
+    <script>
+      (function() {
+        if ("fonts" in document) {
+          document.documentElement.classList.add('fonts-loading');
+          Promise.all([
+            document.fonts.load('1em "Joyride W05 STD"'),
+            document.fonts.load('1em Montserrat')
+          ]).then(() => {
+            document.documentElement.classList.remove('fonts-loading');
+            document.documentElement.classList.add('fonts-loaded');
+          });
+        }
+      })();
+    </script>
+
+    <title>Tesla - Véhicules Électriques</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
