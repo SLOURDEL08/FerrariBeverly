@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className='nav_secondRow'>
         <div className="contain_secondRow">
           <a href='/buy'>
-            <img src="/images/ferrari-logomain.webp" alt="Ferrari logo" />
+            <img src="/images/ferrari-logomain.webp"  width="400" height="30"  alt="Ferrari logo" />
           </a>
           <div className='contain_linkNav hidden md:flex'>
             {Object.values(navData.dropdowns).map((dropdown) => (

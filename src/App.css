@@ -383,7 +383,7 @@ section .screen:hover{
 
 
 section .screen:nth-child(1){
-  background: url('ferrari-roma.webp');
+  background: url('/public/images/ferrari-roma-slide.webp');
   background-repeat: no-repeat;
   background-position:top;
   background-size: cover;
@@ -391,7 +391,7 @@ section .screen:nth-child(1){
 }
 
 section .screen:nth-child(2){
-  background: url('ferrari-corsa.webp');
+  background: url('/public/images/ferrari-corsa-slide.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position:top;

@@ -20,7 +20,7 @@ function Home() {
       <div className='familybox'>
         <h3>WELCOME TO THE FAMILY</h3>
         <p>Ferrari Beverly Hills is part of the Mattioli Automotive Group. We provide clients with a tailored client experience and unparalleled access to the Ferrari lifestyle.</p>
-        <img src='/images/cava-slide.webp' alt='marque' />
+        <img src='/images/cava-slide.webp' width="50" height="50" alt='marque' />
       </div>
       <section className='servicesbox'>
         <div className='services-image-container'>

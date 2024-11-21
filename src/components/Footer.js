@@ -67,7 +67,7 @@ function Footer() {
         </div>
       </div>
 
-      <img src='/images/ferrari-white-slide.webp' alt='logo ferrari footer' className='footerlogo' />
+      <img src='/images/ferrari-white-slide.webp' width="400" height="30" alt='logo ferrari footer' className='footerlogo' />
 
       {/* Navigation mobile */}
       <section className='footer-mobile-nav'>

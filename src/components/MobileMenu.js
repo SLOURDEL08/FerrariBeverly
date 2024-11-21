@@ -14,7 +14,7 @@ const MobileMenu = ({ isOpen, onClose, data }) => {
           <span>{navData.topBar.award}</span>
         </div>
       <div className="mobile-menu-header">
-        <img src="/images/ferrari-logomain.webp" alt="Ferrari logo" />
+        <img src="/images/ferrari-logomain.webp" width="400" height="30" alt="Ferrari logo" />
         <button onClick={onClose} className="close-button">
           <img src="/images/menu-slide.webp" alt="close" style={{ width: '24px', height: '24px' }} />
         </button>
