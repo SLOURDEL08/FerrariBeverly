@@ -1,67 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Dropdown from './Dropdown';
+import MobileMenu from './MobileMenu';
+import { navData } from '../data/navData';
 import '../App.css';
-import Dropdown from '../components/Dropdown';
 
-function Navbar() {
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <nav>
       <div className='topbar'></div>
-      <a target="_self" href='/buy'>
-        <div className='containTopBlock'><span>2022 CAVALLINO AWARD WINNER</span></div>
-      </a>
+        <div className='containTopBlock'>
+          <span>{navData.topBar.award}</span>
+        </div>
 
       <div className='nav_firstRow'>
-        <a target="_self" href='/buy'>
+        <a href='/buy'>
           <div className='contain_searchButton'>
-            <img src="search.png" alt=" icone bouton pour rechercher" /><p>Global Search</p>
+            <img src="search.png" alt="search icon" />
+            <p>Global Search</p>
           </div>
         </a>
         <span></span>
-        <a className='underlinks' target="_self" href='/buy'>(888) 785-8829</a>
+        <a className='underlinks' href='/buy'>{navData.topBar.phone}</a>
         <span></span>
-        <a className='underlinks' target="_self" href='/buy'>9372 Wilshire Blvd,<br />Beverly Hills CA 90212</a>
+        <a className='underlinks' href='/buy'>{navData.topBar.address}</a>
       </div>
 
       <div className='nav_secondRow'>
         <div className="contain_secondRow">
-          <a target="_self" href='/buy'>
-            <img src="ferrari-logo.webp" alt="logo de marque ferrari" />
+          <a href='/buy'>
+            <img src="ferrari-logo.webp" alt="Ferrari logo" />
           </a>
-          <div className='contain_linkNav'>
-          <Dropdown
-  title="Buy"
-  images={['NewLineUp', 'Preowned', 'Wheretofindus', 'Finance']}
-  imagePath="newcar.webp"
-/>
-
-<Dropdown
-  title="Sell"
-  images={['NewLineUp', 'Preowned', 'Wheretofindus', 'Finance']}
-  imagePath="newcar.webp"
-/>
-<Dropdown
-  title="Service"
-  images={['NewLineUp', 'Preowned', 'Wheretofindus', 'Finance']}
-  imagePath="newcar.webp"
-/>
-<Dropdown
-  title="News & Events"
-  images={['NewLineUp', 'Preowned', 'Wheretofindus', 'Finance']}
-  imagePath="newcar.webp"
-/>
-<Dropdown
-  title="Restoration"
-  images={['NewLineUp', 'Preowned', 'Wheretofindus', 'Finance']}
-  imagePath="newcar.webp"
-/>
-<Dropdown
-  title="Racing"
-  images={['NewLineUp', 'Preowned', 'Wheretofindus', 'Finance']}
-  imagePath="newcar.webp"
-/>
+          <div className='contain_linkNav hidden md:flex'>
+            {Object.values(navData.dropdowns).map((dropdown) => (
+              <Dropdown 
+                key={dropdown.title}
+                {...dropdown}
+              />
+            ))}
           </div>
+          <button 
+            className="toggle-menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <img src="menu.png" width={20} height={20} alt="menu" />
+          </button>
         </div>
       </div>
+
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)}
+        data={navData}
+      />
     </nav>
   );
 }

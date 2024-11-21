@@ -4,6 +4,16 @@
   font-weight: normal;
   font-style: normal;
 }
+@import url(https://db.onlinewebfonts.com/c/406b56da0c31245c249b3a3c61560d1a?family=Joyride+W05+STD);
+@font-face {
+    font-family: "Joyride W05 STD";
+    src: url("https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.eot");
+    src: url("https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/406b56da0c31245c249b3a3c61560d1a.svg#Joyride W05 STD")format("svg");
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .App {
   text-align: center;
@@ -11,6 +21,12 @@
 
 .Home {
   text-align: center;
+}
+
+
+
+.font-joy{
+  font-family: 'JoyLight';
 }
 
 
@@ -35,7 +51,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+html{
+  overflow-x: hidden;
+}
 .App-link {
   color: #61dafb;
 }
@@ -57,8 +75,8 @@
 }
 
 nav{
-  width: calc(100% - 180px); /* 100% moins 90px de padding à gauche et 90px de padding à droite */
-  padding : 0px 90px;
+  width:calc(100% - 100px);
+  padding: 0px 50px;
   z-index: 3000;
   position: fixed;
   background-color: white;
@@ -289,17 +307,17 @@ padding:40px 90px;
 
 .split{
   position:relative;
-  height:120vh;
+  height:105vh;
   display:flex;
   background: #000;
 }
 
 section .screen{
   position:relative;
-  flex-grow: 2;
+  flex-grow: 4;
   display: flex;
   overflow: hidden;
-  height:120vh;
+  height:105vh;
   transition: 1s;
   justify-content:flex-end;
   align-items:flex-end;
@@ -320,14 +338,14 @@ section .screen:nth-child(1){
   background: url('ferrari-roma.webp');
   background-repeat: no-repeat;
   background-position:top;
-  background-size: 1300px;
+  background-size: cover;
   border-right:10px solid #fef200;
 }
 
 section .screen:nth-child(2){
   background: url('ferrari-corsa.webp');
   background-repeat: no-repeat;
-  background-size: 1800px;
+  background-size: cover;
   background-position:top;
 
   border-left:10px solid #fef200;
@@ -364,6 +382,27 @@ section .screen h2{
 section .screen p{
   color: #666666;
 }
+
+@media (max-width: 1000px) {
+.split{
+  display: block;
+  height: 800px;
+}
+.screen{
+  height: 400px!important;
+}
+
+section .screen:nth-child(1){
+  border-right: 0px;
+  border-bottom:5px solid #fef200;
+}
+
+section .screen:nth-child(2){
+  border-left: 0px;
+  border-top:5px solid #fef200;
+}
+}
+
 
 .content img{
   height:40px;
@@ -414,6 +453,7 @@ padding: 100px 90px;
 
 .contain_featured{
     background-color: #f6f5f3;
+    overflow: hidden;
   
 }
 
@@ -721,15 +761,13 @@ margin:0px;
     
     .overnews {
       position: absolute;
-      top: 0;
+      bottom: 0;
+      z-index: 1000;
       left: 0;
-      width: 87%;
+      width: 100%;
       height: 100%;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-      display: flex;
-padding:0px 90px;
-      flex-direction: column; /* Alignement vertical */
-      justify-content: flex-end; /* Aligner en bas */
+     
     }
 
     .yelo {
@@ -739,6 +777,7 @@ padding:0px 90px;
       text-align: left; /* Alignement du texte au centre */
       padding: 60px;
   height: 200px;
+  z-index: 9999999;
   align-items: center;
     }
 
@@ -1158,7 +1197,7 @@ margin-bottom:20px;text-align: left;}
 
 .slick-slide {
   margin: 0 10px;
-  width: calc(33.33% - 20px); /* 33.33% pour 3 slides par ligne, avec 10px de marge de chaque côté */
+  width: 300px; /* 33.33% pour 3 slides par ligne, avec 10px de marge de chaque côté */
 
 }
 
@@ -1197,11 +1236,12 @@ margin-bottom:20px;text-align: left;}
 }
 
 .slick-prev {
+  
   width: 100px!important;
   height:100px!important;
   position: absolute;
-  left: 420px!important;
-  top:0;
+  left: 50%!important;
+  bottom: 0;
   margin-top:200px;
   text-align: center;
   z-index: 1000;
@@ -1211,8 +1251,8 @@ margin-bottom:20px;text-align: left;}
   width: 100px!important;
   height:100px!important;
   position: absolute;
-  right: 420px!important;
-  top:0;
+  right: 50%!important;
+  bottom:0;
   margin-top:200px;
   text-align: center;
   color:red;
@@ -1252,7 +1292,6 @@ body{
 }
 
 .slick-slider .slick-list {
-  transform: translate3d(0, 0, 0);
   height: 620px;
 }
 
@@ -1546,4 +1585,516 @@ padding:70px 0px;
 .underlinelink span{
   text-decoration: underline;
   font-weight:500
+}
+
+.custom-sell-title{
+  color:red!important
+}
+
+.font-joy{
+
+}
+
+.header-item a {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #d1d1d1;
+  /* Ajoutez d'autres styles spécifiques pour les headers */
+}
+
+.dropdown_item:not(.header-item) a {
+  /* Styles pour les liens normaux */
+  color: rgb(55, 55, 55);
+   font-weight: 400!important;
+   font-family: 'Joyride W05 STD'!important;
+}
+
+.dropdown_right_content {
+  min-width: 200px; /* Pour garantir un espace suffisant pour les images */
+}
+
+
+
+/* MOBILE */
+
+/* Mobile menu core styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.mobile-menu-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-header img {
+  max-height: 40px;
+  width: auto;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.award-banner {
+  padding: 12px 16px;
+  background: #f8f8f8;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Joyride';
+}
+
+.mobile-menu-content {
+  padding: 16px;
+    font-family: 'Joyride';
+
+}
+
+/* Tab styles */
+.mobile-tab {
+  border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+  font-family: 'Joyride';
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tab-button.active img {
+  transform: rotate(180deg);
+}
+
+.tab-content {
+  display: none;
+  padding: 8px 16px;
+  background: #fff;
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 12px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.mobile-menu-link.header {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Footer styles */
+.mobile-menu-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 16px;
+  border-top: 1px solid #eee;
+  font-family: 'Montserrat';
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-link img {
+  margin-right: 8px;
+}
+
+/* Media query */
+@media (min-width: 768px) {
+  .toggle-menu {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+
+  .toggle-menu {
+    display: block;
+  }
+
+  .contain_linkNav{
+    display: none;
+  }
+
+  .contain_secondRow{
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+
+
+
+.newsletter-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: url('/public/news.webp') no-repeat center center/cover;
+}
+
+.newsletter-overlay {
+  position: absolute;
+  inset: 0;
+background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.6) 100%
+  );  display: flex;
+  align-items: end;
+}
+
+.newsletter-card {
+  width: 400px;
+  background: #fef200;
+  padding: 40px;
+  margin-left: 10%;
+  z-index: 2;
+}
+.toggle-menu{background-color: transparent!important;
+border: none;}
+
+   .newsletter-card h5{
+      color:black;
+      font-family: 'Joyride', sans-serif;
+      font-size:40px;
+      text-align: left;
+      padding:0px;
+      margin:0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      }
+
+    .newsletter-card h6{
+    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    padding:0px;
+    margin:0px;
+    }
+
+
+
+    @media (max-width: 900px) {
+      .submitform-contain{
+        flex-direction: column;
+        gap: 20px;
+      }
+      .foot-linkstitle span{
+        width: auto;
+      }
+      .foot-linkstitle{
+        margin-top: 40px;
+      }
+      .toggle-menu img{
+        width: 25px;
+        height: 25px;
+      }
+.foot-links{
+  margin-top: 0!important;
+  background-color: transparent!important;
+}
+      .foot-linkstitle{
+        flex-direction: column;
+      }
+      .contain-footlinks{
+        display: grid;
+  grid-template-columns: repeat(4, 1fr);
+      }
+      .footer{
+        padding: 50px 40px;
+      }
+      .cfooter{
+        margin: 0px;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .leftfooter h3{
+        font-size: 26px;
+      }
+      .leftfooter{
+        width: 100%;
+      }
+      .rightfooter{
+        width: 100%;
+      }
+      .item-services{
+        width: 80%;
+      }
+      .SkewButton_button__xipxU{
+        width: auto;
+      }
+      .container_racingteam img{
+        height: 300px;
+      }
+      .text-racingteam h5{
+        font-size: 26px;
+      }
+
+      .familybox{
+        margin: 0px;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }.familybox h3{
+        padding: 0;
+        margin: 0;
+      }
+      .item-services span{
+        font-size: 22px;
+        line-height: 1.6;
+      }
+      .familybox p{
+        font-size: 25px;
+        margin: 0px 0px;
+      }
+      .item-sells{
+        width: 100%;
+      }
+      .slick-prev{
+
+margin: 0
+;     
+margin-top: 160px!important; }
+ .slick-next{margin-top: 160px!important;
+margin: 0
+;      }
+      .title_latestnews{
+        flex-direction: column;
+      }
+      .newsletter-card{
+        margin: 0;
+
+      }
+      .findus-sec{
+        flex-direction: column;
+      }
+      .findus-sec div{
+        margin: 0;
+        margin-top: 20px;
+      }
+      .textright-footer a{
+        font-size: 16px;
+        margin-left: 20px;
+        margin-top: 0;
+      }
+      .third-footer{
+        padding: 30px 0px;
+      }
+      .four-footer{
+        padding-top: 40px;
+      }
+      .four-footer{
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 20px;
+        line-height: 2;
+      }
+      .four-footer div{
+        flex-direction: column;
+      }
+      .textright-footer svg{
+width: 30px;height: 30px;        margin: 0;
+      }
+      .nav_firstRow{
+        display: none;
+      }
+      .nav_secondRow{
+        margin-top: 20px;
+        padding-bottom: 10px;
+      }
+      nav{
+        width: calc(100% - 40px);
+        padding: 0px 20px;
+      }
+      .newsletter-card h5{
+        font-size: 26px;
+      }
+      .titlehome{
+        padding: 40px;
+      }
+      .titlehome p{
+        font-size: 26px;
+      }
+      .slick-track{
+        height: inherit;
+      }
+      .item-sells span{
+        font-size: 26px;
+      }
+      .newsletter-card{
+        width: 100%;
+      }
+      .testimonial-rel{
+        height: 100%;
+        width: 100%;
+      }
+      .sellbox{
+        margin: 0;
+      }
+      .footerlogo{
+        margin-top: 50px;
+        width: 75%;
+      }
+      .overlay-servicescta{
+        margin-left: 0px;
+        padding-left: 50px;
+        padding-right:20px ;
+        width: auto;
+      }
+      .sell-image-container{
+        width: 100%;
+        height: 500px;
+      }
+      .testimonial-rel{
+        margin-top: 0px;
+      }
+      .sellbox{
+        padding: 40px;
+      }
+.imgracing{
+  width: 100%;
+}
+      .container_racingteam{
+        flex-direction: column;
+        padding: 40px;
+      }
+      .text-racingteam{
+        width: 100%;
+        padding: 40px;
+      }
+      .titrePost{
+        font-size: 20px;
+      }
+      .auteur{
+        font-size: 24px;
+      }
+.img-slide-feat{
+  height: 200px!important;
+}
+.slick-prev{
+  left: 50%, im !important;;
+  transform: translateX(-50%);
+}
+
+    .slick-slider .slick-list{
+      height: 450px;
+    }
+}
+
+
+
+    @media (max-width: 768px) {
+
+
+    }
+
+
+
+
+
+    @media (max-width: 768px) {
+  .footer-desktop-nav {
+    display: none;
+  }
+
+  .footer-mobile-nav {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .footer-tab {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tab-title {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+  }
+
+  .tab-title::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+
+  .tab-title.active::after {
+    transform: rotate(-135deg);
+  }
+
+  .foot-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .foot-links.active {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .foot-links p {
+    padding: 10px 0;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (min-width: 769px) {
+  .footer-mobile-nav {
+    display: none;
+  }
 }
