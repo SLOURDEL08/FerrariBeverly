@@ -2098,3 +2098,31 @@ width: 30px;height: 30px;        margin: 0;
     display: none;
   }
 }
+
+
+
+
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.error-boundary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #ff0000;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-content {
+  min-height: calc(100vh);
+}
