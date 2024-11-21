@@ -14,9 +14,9 @@ const MobileMenu = ({ isOpen, onClose, data }) => {
           <span>{navData.topBar.award}</span>
         </div>
       <div className="mobile-menu-header">
-        <img src="ferrari-logo.webp" alt="Ferrari logo" />
+        <img src="/images/ferrari-logomain.webp" alt="Ferrari logo" />
         <button onClick={onClose} className="close-button">
-          <img src="menu.png" alt="close" style={{ width: '24px', height: '24px' }} />
+          <img src="/images/menu-slide.webp" alt="close" style={{ width: '24px', height: '24px' }} />
         </button>
       </div>
 
@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, onClose, data }) => {
             >
               {dropdown.title}
               <img 
-                src="dropdown.png" 
+                src="/images/dropdown-slide.webp" 
                 alt=""
                 style={{ width: '12px', height: '12px' }}
               />
@@ -55,7 +55,7 @@ const MobileMenu = ({ isOpen, onClose, data }) => {
 
       <div className="mobile-menu-footer">
         <a href="/#" className="footer-link">
-          <img src="search.png" alt="search" style={{ width: '20px', height: '20px' }} />
+          <img src="/images/search-logo.webp" alt="search" style={{ width: '20px', height: '20px' }} />
           <span>Global Search</span>
         </a>
         <a href="/#" className="footer-link">

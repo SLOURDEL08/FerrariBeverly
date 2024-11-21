@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className='nav_firstRow'>
         <a href='/buy'>
           <div className='contain_searchButton'>
-            <img src="search.png" alt="search icon" />
+            <img src="/images/search-logo.webp" alt="search icon" />
             <p>Global Search</p>
           </div>
         </a>
@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className='nav_secondRow'>
         <div className="contain_secondRow">
           <a href='/buy'>
-            <img src="ferrari-logo.webp" alt="Ferrari logo" />
+            <img src="/images/ferrari-logomain.webp" alt="Ferrari logo" />
           </a>
           <div className='contain_linkNav hidden md:flex'>
             {Object.values(navData.dropdowns).map((dropdown) => (
@@ -44,7 +44,7 @@ const Navbar = () => {
             className="toggle-menu"
             onClick={() => setIsMobileMenuOpen(true)}
           >
-            <img src="menu.png" width={20} height={20} alt="menu" />
+            <img src="/images/menu-slide.webp" width={20} height={20} alt="menu" />
           </button>
         </div>
       </div>

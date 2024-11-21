@@ -9,25 +9,25 @@ export const navData = {
     buy: {
       title: "Buy",
       items: [
-        { title: "New Line Up", image: "NewLineUp.webp", showImage: true },
-        { title: "Preowned", image: "Preowned.webp", showImage: true },
-        { title: "Where to Find Us", image: "Wheretofindus.webp", showImage: true },
-        { title: "Finance", image: "Finance.webp", showImage: true }
+        { title: "New Line Up", image: "/images/NewLineUp-slide.webp", showImage: true },
+        { title: "Preowned", image: "/images/Preowned-slide.webp", showImage: true },
+        { title: "Where to Find Us", image: "/images/Wheretofindus-slide.webp", showImage: true },
+        { title: "Finance", image: "/images/Finance-slide.webp", showImage: true }
       ]
     },
     sell: {
       title: "Sell",
       items: [
         { title: "PRIVATE SELLERS", isHeader: true },
-        { title: "Consign Your Vehicle", image: "sellfirst.png", showImage: true },
-        { title: "Sell Your Vehicle", image: "sellsec.png", showImage: true }
+        { title: "Consign Your Vehicle", image: "/images/sellfirst-slide.webp", showImage: true },
+        { title: "Sell Your Vehicle", image: "/images/sellsec-slide.webp", showImage: true }
       ]
     },
     service: {
       title: "Service",
       items: [
-        { title: "Schedule Service", image: "service.webp", showImage: true },
-        { title: "Parts", image: "parts.webp", showImage: true }
+        { title: "Schedule Service", image: "/images/services-slide.webp", showImage: true },
+        { title: "Parts", image: "/images/part-slide.webp", showImage: true }
       ]
     },
     newsEvents: {

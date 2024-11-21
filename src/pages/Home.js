@@ -20,7 +20,7 @@ function Home() {
       <div className='familybox'>
         <h3>WELCOME TO THE FAMILY</h3>
         <p>Ferrari Beverly Hills is part of the Mattioli Automotive Group. We provide clients with a tailored client experience and unparalleled access to the Ferrari lifestyle.</p>
-        <img src='cava.webp' alt='marque' />
+        <img src='/images/cava-slide.webp' alt='marque' />
       </div>
       <section className='servicesbox'>
         <div className='services-image-container'>
@@ -40,13 +40,13 @@ function Home() {
             </div>
 
           </div>
-          <img src='services.webp' alt='services' />
+          <img src='/images/services-slide.webp' alt='services' />
         </div>
       </section>
 <section>
   <div className='container_racingteam'>
   <div className='imgracing'>
-        <img src='racingteam.webp' alt='racing team' />
+        <img src='/images/racingteam-feature.webp' alt='racing team' />
     </div>
     <div className='text-racingteam'>
         <div className='flextext-racing'>
@@ -63,7 +63,7 @@ function Home() {
 <section>
   <div className='container_racingteam'>
   <div className='imgracing'>
-        <img src='restore.webp' alt='racing team' />
+        <img src='/images/restore-slide.webp' alt='racing team' />
     </div>
     <div className='text-racingteam'>
         <div className='flextext-racing'>
@@ -95,14 +95,14 @@ function Home() {
       </div>
     </div>
     
-    <img src='landing.webp' alt='services' />
+    <img src='/images/landing-slide.webp' alt='services' />
   </div>
   <div className='containtestimonial'>
     <div className='testimonial-rel'>
       <div className='contbartesti'><span className='bartesti'></span><h6>TESTIMONIAL</h6></div>
       <p>The process of selling my car was extremely simple, from start to finish. The FBH team facilitated everything with great expertise.</p>
       <div className='infostesti'>
-        <img src='user.webp' alt='user icone'/>
+        <img src='/images/user-logo.webp' alt='user icone'/>
         <div className='textinfos-testi'>
           <span className='detailstesti'><b>Scott J, Private Seller</b><br/>September 22, 2022</span>
         </div>

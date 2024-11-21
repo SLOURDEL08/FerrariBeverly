@@ -18,7 +18,7 @@ const LatestNews = () => {
             <h2>August 24, 2023</h2>
             <span>BACCHELLI & VILLA’S SONOMA CAMEO</span></div>
           </div>
-          <img src="zyro-image.webp"  width="300" height="300"   className='img-slide' alt="jejed"/>
+          <img src="/images/zyro-image-hero.webp"  width="300" height="300"   className='img-slide' alt="jejed"/>
         </div>
         <div className="slide-news">
           <div className="latestnews-content">
@@ -27,7 +27,7 @@ const LatestNews = () => {
             <h2>August 24, 2023</h2>
             <span>BACCHELLI & VILLA'S SONOMA CAMEO</span></div>
           </div>
-          <img src="zyro2.webp"  width="300" height="300"   className='img-slide' alt="jejed"/>
+          <img src="/images/zyro2-hero.webp"  width="300" height="300"   className='img-slide' alt="jejed"/>
         </div>
         <div className="slide-news">
           <div className="latestnews-content">
@@ -36,7 +36,7 @@ const LatestNews = () => {
             <h2>August 24, 2023</h2>
             <span>BACCHELLI & VILLA'S SONOMA CAMEO</span></div>
           </div>
-          <img src="zyro3.webp" width="300" height="300"  className='img-slide' alt="jejed"/>
+          <img src="/images/zyro3-hero.webp" width="300" height="300"  className='img-slide' alt="jejed"/>
         </div>
         <div className="slide-news">
           <div className="latestnews-content">
@@ -45,7 +45,7 @@ const LatestNews = () => {
             <h2>August 24, 2023</h2>
             <span>BACCHELLI & VILLA'S SONOMA CAMEO</span></div>
           </div>
-          <img src="zyro4.webp"  width="300" height="300"   className='img-slide' alt="jejed"/>
+          <img src="/images/zyro4-hero.webp"  width="300" height="300"   className='img-slide' alt="jejed"/>
         </div>
        
       </Carousel>
