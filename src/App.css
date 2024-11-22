@@ -310,19 +310,22 @@ display: none;
 
 .dropdown_item{
   padding:20px 20px;
+  text-align: left;
 
 }
 
 .dropdown_item a{
   font-size: 18px;
   line-height:10px;
-  text-align: center;
+  text-align: left;
   color:black;
   text-decoration: none;
   font-family: 'Joyride', sans-serif;
   font-weight:400;
 
 }
+
+
 
 
 .dropdown_right_content img{
@@ -1655,6 +1658,11 @@ padding:70px 0px;
   color: rgb(55, 55, 55);
    font-weight: 400!important;
    font-family: 'Joyride W05 STD'!important;
+   transition:0.2s ease-in-out all;
+}
+.dropdown_item:not(.header-item) a:hover {
+     transition:0.2s ease-in-out all;
+  color: rgb(255, 0, 0);
 }
 
 .dropdown_right_content {
